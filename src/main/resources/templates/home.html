@@ -5,7 +5,7 @@
     <title>Home Page</title>
 </head>
 <body>
-    <div th:replace="/header :: headerFragment"></div>
+    <div th:replace="~{/header :: headerFragment}"></div>
 
     <h1>Thymeleaf! 템플릿 입니다!</h1>
     <p th:text="${message}">This is a static message.</p>

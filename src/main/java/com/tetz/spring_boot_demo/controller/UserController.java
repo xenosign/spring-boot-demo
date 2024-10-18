@@ -20,16 +20,16 @@ public class UserController {
         this.userServiceImpl = userServiceImpl;
     }
 
-    @GetMapping("/jpa")
-    public String findAllJpa(Model model) {
-        List<User> users = userServiceImpl.findAll();
+    @GetMapping("/mybatis")
+    public String findAllMyBatis(Model model) {
+        List<User> users = userServiceImpl.findAllMybatis();
         model.addAttribute("users", users);
         return "user";
     }
 
-    @GetMapping("/mybatis")
-    public String findAllMyBatis(Model model) {
-        List<User> users = userServiceImpl.findAll();
+    @GetMapping("/jpa")
+    public String findAllJpa(Model model) {
+        List<User> users = userServiceImpl.findAllJpa();
         model.addAttribute("users", users);
         return "user";
     }
