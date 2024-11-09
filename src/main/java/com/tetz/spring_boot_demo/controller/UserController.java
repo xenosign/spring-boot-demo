@@ -1,6 +1,7 @@
 package com.tetz.spring_boot_demo.controller;
 
 import com.tetz.spring_boot_demo.entity.User;
+import com.tetz.spring_boot_demo.entity.UserVo;
 import com.tetz.spring_boot_demo.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,13 @@ public class UserController {
     @GetMapping("/jpa")
     public String findAllJpa(Model model) {
         List<User> users = userServiceImpl.findAllJpa();
+        model.addAttribute("users", users);
+        return "user";
+    }
+
+    @GetMapping("/jdbc")
+    public String findAllSingleton(Model model) {
+        List<UserVo> users = userServiceImpl.findAllJdbc();
         model.addAttribute("users", users);
         return "user";
     }
