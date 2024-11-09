@@ -7,20 +7,23 @@ import com.tetz.spring_boot_demo.repository.UserMapperRepository;
 import com.tetz.spring_boot_demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import javax.sql.DataSource;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
-    private final UserMapperRepository  userMapperRepository;
     private final UserJdbcRepository userJdbcRepository;
+    private final UserMapperRepository userMapperRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserMapperRepository userMapperRepository, UserJdbcRepository userJdbcRepository) {
+    public UserServiceImpl(UserRepository userRepository,
+                           UserMapperRepository userMapperRepository,
+                           DataSource dataSource) {
         this.userRepository = userRepository;
         this.userMapperRepository = userMapperRepository;
-        this.userJdbcRepository = userJdbcRepository;
+        this.userJdbcRepository = UserJdbcRepository.getInstance(dataSource);
     }
 
     public List<User> findAllMybatis() {
@@ -31,5 +34,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-    public List<UserVo> findAllJdbc() { return userJdbcRepository.findAll(); }
+    public List<UserVo> findAllJdbc() {
+        return userJdbcRepository.findAll();
+    }
 }

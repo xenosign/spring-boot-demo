@@ -1,20 +1,27 @@
 package com.tetz.spring_boot_demo.repository;
 
 import com.tetz.spring_boot_demo.entity.UserVo;
-import org.springframework.stereotype.Repository;
-
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
 public class UserJdbcRepository {
-
+    // 싱글톤 인스턴스
+    private static UserJdbcRepository instance;
     private final DataSource dataSource;
 
-    public UserJdbcRepository(DataSource dataSource) {
+    // private 생성자
+    private UserJdbcRepository(DataSource dataSource) {
         this.dataSource = dataSource;
+    }
+
+    // 싱글톤 인스턴스를 가져오는 메서드
+    public static synchronized UserJdbcRepository getInstance(DataSource dataSource) {
+        if (instance == null) {
+            instance = new UserJdbcRepository(dataSource);
+        }
+        return instance;
     }
 
     // 모든 사용자 조회

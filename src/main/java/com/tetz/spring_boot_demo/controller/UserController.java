@@ -21,6 +21,13 @@ public class UserController {
         this.userServiceImpl = userServiceImpl;
     }
 
+    @GetMapping("/jdbc")
+    public String findAllSingleton(Model model) {
+        List<UserVo> users = userServiceImpl.findAllJdbc();
+        model.addAttribute("users", users);
+        return "user";
+    }
+
     @GetMapping("/mybatis")
     public String findAllMyBatis(Model model) {
         List<User> users = userServiceImpl.findAllMybatis();
@@ -35,10 +42,4 @@ public class UserController {
         return "user";
     }
 
-    @GetMapping("/jdbc")
-    public String findAllSingleton(Model model) {
-        List<UserVo> users = userServiceImpl.findAllJdbc();
-        model.addAttribute("users", users);
-        return "user";
-    }
 }
