@@ -1,4 +1,4 @@
-package com.tetz.spring_boot_demo.entity;
+package com.tetz.spring_boot_demo.entity.user;
 
 import java.time.LocalDateTime;
 

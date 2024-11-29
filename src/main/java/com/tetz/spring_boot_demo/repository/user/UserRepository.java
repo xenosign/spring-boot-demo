@@ -1,9 +1,8 @@
-package com.tetz.spring_boot_demo.repository;
+package com.tetz.spring_boot_demo.repository.user;
 
-import com.tetz.spring_boot_demo.entity.User;
+import com.tetz.spring_boot_demo.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

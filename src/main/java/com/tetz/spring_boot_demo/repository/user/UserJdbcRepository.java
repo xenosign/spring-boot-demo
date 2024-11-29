@@ -1,6 +1,6 @@
-package com.tetz.spring_boot_demo.repository;
+package com.tetz.spring_boot_demo.repository.user;
 
-import com.tetz.spring_boot_demo.entity.UserVo;
+import com.tetz.spring_boot_demo.entity.user.UserVo;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;

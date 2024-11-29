@@ -1,6 +1,6 @@
-package com.tetz.spring_boot_demo.repository;
+package com.tetz.spring_boot_demo.repository.user;
 
-import com.tetz.spring_boot_demo.entity.User;
+import com.tetz.spring_boot_demo.entity.user.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,4 +1,4 @@
-package com.tetz.spring_boot_demo.dto;
+package com.tetz.spring_boot_demo.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

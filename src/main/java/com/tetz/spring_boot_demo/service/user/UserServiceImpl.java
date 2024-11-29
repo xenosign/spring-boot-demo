@@ -1,10 +1,10 @@
-package com.tetz.spring_boot_demo.service;
+package com.tetz.spring_boot_demo.service.user;
 
-import com.tetz.spring_boot_demo.entity.User;
-import com.tetz.spring_boot_demo.entity.UserVo;
-import com.tetz.spring_boot_demo.repository.UserJdbcRepository;
-import com.tetz.spring_boot_demo.repository.UserMapperRepository;
-import com.tetz.spring_boot_demo.repository.UserRepository;
+import com.tetz.spring_boot_demo.entity.user.User;
+import com.tetz.spring_boot_demo.entity.user.UserVo;
+import com.tetz.spring_boot_demo.repository.user.UserJdbcRepository;
+import com.tetz.spring_boot_demo.repository.user.UserMapperRepository;
+import com.tetz.spring_boot_demo.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.sql.DataSource;
