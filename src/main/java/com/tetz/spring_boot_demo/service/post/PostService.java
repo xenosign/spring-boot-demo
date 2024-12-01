@@ -8,6 +8,7 @@ import java.util.List;
 @Service
 public interface PostService {
     List<PostDto> findAll();
+    PostDto findById(Long id);
     PostDto createPost(PostDto postDto);
     void deletePost(Long id);
 }

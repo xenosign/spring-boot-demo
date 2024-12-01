@@ -30,6 +30,17 @@ public class PostServiceImpl implements PostService {
 
     }
 
+    public PostDto findById(Long id) {
+        return postRepository.findById(id)
+                .stream()
+                .map(post -> new PostDto(
+                        post.getId(),
+                        post.getBody(),
+                        post.getAuthor()
+                ))
+                .toList().get(0);
+    }
+
     @Override
     public PostDto createPost(PostDto postDto) {
         Post post = new Post(postDto.getBody(), postDto.getAuthor());

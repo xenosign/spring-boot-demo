@@ -20,6 +20,12 @@ public class PostController {
         return ResponseEntity.ok(postService.findAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<PostDto> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(postService.findById(id));
+    }
+
+
     @PostMapping("")
     public ResponseEntity<PostDto> savePost(@RequestBody PostDto postDto) {
         PostDto savedPost = postService.createPost(postDto);
