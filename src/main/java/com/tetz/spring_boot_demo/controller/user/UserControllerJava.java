@@ -13,8 +13,8 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/java/user")
+public class UserControllerJava {
     private final UserService userService;
 
     @GetMapping("/jdbc")
